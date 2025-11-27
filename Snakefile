@@ -1,6 +1,6 @@
 # -*- mode: snakemake -*-
 
-configfile:"config.yml"
+configfile:"config.yaml"
 
 rule all:
 	"The default rule"
