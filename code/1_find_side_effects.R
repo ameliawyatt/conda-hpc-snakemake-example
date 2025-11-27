@@ -3,7 +3,7 @@ library(tidyverse)
 library(tidytext)
 
 #read in data
-dta <- read_tsv('../data/original/drugLibTrain_raw.tsv')
+dta <- read_tsv('data/original/drugLibTrain_raw.tsv')
 
 #define arguments
 args = commandArgs(trailingOnly = TRUE)
@@ -50,7 +50,7 @@ results <- tibble('rank' = c(1:100),
 		  'word_frequency' = words$n,
                   'bigram' = bigrams$bigram,
 		  'bigram_frequency' = bigrams$n,) %>%
-           write_csv(paste('../data/derived/intermediate/word_rankings_',
+           write_csv(paste('data/derived/intermediate/word_rankings_',
                            CONDITION,'.csv',sep=''))
 
 
