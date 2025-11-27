@@ -1,16 +1,17 @@
 #!/bin/bash
 
+mkdir -p data/derived/
 
-cd ../
 
+Rscript code/0_get_conditions.R
 
-echo "CONDITIONS:" > config.yml
+echo "CONDITIONS:" > config.yaml
 {       read
         while IFS=, read -r line;
         do
-                printf "  - ${line}\n">>config.yml
+                printf "  - ${line}\n">>config.yaml
 
         done
 
-} < ../data/derived/top_conditions.csv
+} < data/derived/top_conditions.csv
 
